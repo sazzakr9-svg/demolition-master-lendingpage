@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>철거명장 | 산업안전기사가 설계하는 대한민국 최저가 철거 전문업체</title>
+  <meta name="description" content="철거명장은 국가공인 산업안전기사가 직접 설계하는 정밀 철거 전문업체입니다. 상가철거, 인테리어철거 최저가 보장. 폐업지원금 최대 1,000만 원 안내. 철거창업 파트너 모집 중.">
+  <meta name="keywords" content="철거비용, 상가철거, 인테리어철거, 폐업지원금, 철거창업, 산업안전기사, 철거업체, 철거명장, 폐기물처리, 철거견적">
+  <meta name="author" content="철거명장">
+  <meta property="og:title" content="철거명장 | 산업안전기사가 설계하는 최저가 철거">
+  <meta property="og:description" content="무자격 업체와는 다릅니다. 산업안전기사가 공정을 설계하여 안전과 최저가를 동시에 실현합니다.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.demolition-master.kr">
+
+  <!-- Pretendard 웹폰트 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#EAB308',
+              'gold-light': '#FBBF24',
+              'gold-dim': '#CA8A04',
+              'gold-glow': 'rgba(234,179,8,0.15)',
+              black: '#111827',
+              dark: '#18181B',
+              charcoal: '#1F2937',
+              slate: '#374151',
+              muted: '#6B7280',
+              subtle: '#9CA3AF',
+              surface: '#F9FAFB',
+              'surface-alt': '#F3F4F6',
+            }
+          },
+          fontFamily: {
+            sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            '4xl': '2rem',
+          },
+          boxShadow: {
+            'soft': '0 2px 40px rgba(0,0,0,0.04)',
+            'soft-lg': '0 8px 60px rgba(0,0,0,0.06)',
+            'soft-xl': '0 16px 80px rgba(0,0,0,0.08)',
+            'gold': '0 8px 40px rgba(234,179,8,0.20)',
+            'inner-soft': 'inset 0 2px 4px rgba(0,0,0,0.04)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    /* 플로팅 바 하단 여백 */
+    body { padding-bottom: 80px; }
+    @media (min-width: 1024px) { padding-bottom: 72px; }
+
+    /* 헤더 */
+    .header-blur {
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    .header-scrolled {
+      background: rgba(17,24,39,0.85);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .header-scrolled-light {
+      background: rgba(249,250,251,0.80);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+
+    /* 스크롤 기반 페이드인 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* 히어로 그라데이션 */
+    .hero-gradient {
+      background: linear-gradient(
+        180deg,
+        rgba(17,24,39,0.30) 0%,
+        rgba(17,24,39,0.60) 40%,
+        rgba(17,24,39,0.92) 75%,
+        #111827 100%
+      );
+    }
+
+    /* 슬라이더 */
+    .slider-track {
+      display: flex; gap: 1.5rem;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .slider-track::-webkit-scrollbar { display: none; }
+    .slider-card { scroll-snap-align: start; flex-shrink: 0; }
+
+    /* 골드 글로우 */
+    .gold-glow { box-shadow: 0 0 80px 20px rgba(234,179,8,0.08); }
+    .gold-glow-strong { box-shadow: 0 0 120px 40px rgba(234,179,8,0.12); }
+
+    /* 모바일 메뉴 */
+    .mobile-nav {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-overlay {
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-overlay.open { opacity: 1; pointer-events: auto; }
+
+    /* 부드러운 호버 */
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
+
+    /* 숫자 카운트 */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+    }
+
+    /* 비교 섹션 커넥터 */
+    .compare-connector {
+      position: relative;
+    }
+    .compare-connector::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: -1rem; bottom: -1rem; width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(234,179,8,0.3), transparent);
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .compare-connector::after { display: block; }
+    }
+
+    /* 플로팅 바 */
+    .floating-bar-hidden { transform: translateY(100%); }
+    .floating-bar-visible { transform: translateY(0); }
+  </style>
+</head>
+
+<body class="bg-brand-black text-white">
+
+  <!-- ===== 1. HEADER ===== -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 header-blur transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- 로고 -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 bg-brand-gold rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <svg class="w-5 h-5" fill="#111827" viewBox="0 0 24 24"><path d="M21 16.811c0 .682-.23 1.178-.687 1.488-.458.31-1.074.333-1.849.07l-5.175-1.763A6 6 0 0 1 9 10.832V5.169a6 6 0 0 1 4.289-5.774l5.175-1.763c.775-.263 1.39-.24 1.849.07.456.31.687.806.687 1.488v17.621ZM7 10.832a8 8 0 0 0 4.646 7.268L5.19 20.363c-.77.262-1.383.24-1.841-.07C2.89 19.983 2.66 19.487 2.66 18.805V1.195c0-.682.23-1.178.688-1.489.458-.31 1.072-.332 1.841-.069l3.81 1.298V10.832Z"/></svg>
+          </div>
+          <span class="text-lg font-extrabold tracking-tight text-white">철거<span class="text-brand-gold">명장</span></span>
+        </a>
+
+        <!-- 데스크탑 네비게이션 -->
+        <nav class="hidden lg:flex items-center gap-10" aria-label="메인 내비게이션">
+          <a href="#brand-story" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">브랜드 스토리</a>
+          <a href="#services" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">서비스 안내</a>
+          <a href="#subsidy" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">폐업지원금</a>
+          <a href="#partner" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">파트너 명장 모집</a>
+        </nav>
+
+        <!-- 데스크탑 CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#partner"
+            class="px-5 py-2.5 bg-brand-gold text-brand-black text-[13px] font-bold tracking-tight rounded-xl hover:bg-brand-gold-light transition-all duration-300 hover:shadow-gold">
+            아카데미 교육문의
+          </a>
+          <a href="#contact"
+            class="px-5 py-2.5 bg-white/10 text-white text-[13px] font-bold tracking-tight rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300">
+            무료 견적신청
+          </a>
+        </div>
+
+        <!-- 모바일 햄버거 -->
+        <button id="menu-open" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10 transition-colors" aria-label="메뉴 열기">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 9h16.5m-16.5 6.75h16.5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 모바일 오버레이 -->
+    <div id="mob-overlay" class="mobile-overlay fixed inset-0 bg-black/60 z-40 lg:hidden"></div>
+    <!-- 모바일 사이드 패널 -->
+    <nav id="mob-nav" class="mobile-nav fixed top-0 right-0 w-[300px] h-full bg-brand-dark z-50 lg:hidden" aria-label="모바일 내비게이션">
+      <div class="p-7">
+        <button id="menu-close" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white/10 transition-colors" aria-label="메뉴 닫기">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="mt-16 flex flex-col gap-1">
+          <a href="#brand-story" class="mob-link block py-3.5 px-4 text-[15px] font-medium text-brand-subtle hover:text-white hover:bg-white/5 rounded-xl transition-all">브랜드 스토리</a>
+          <a href="#services" class="mob-link block py-3.5 px-4 text-[15px] font-medium text-brand-subtle hover:text-white hover:bg-white/5 rounded-xl transition-all">서비스 안내</a>
+          <a href="#subsidy" class="mob-link block py-3.5 px-4 text-[15px] font-medium text-brand-subtle hover:text-white hover:bg-white/5 rounded-xl transition-all">폐업지원금</a>
+          <a href="#partner" class="mob-link block py-3.5 px-4 text-[15px] font-medium text-brand-subtle hover:text-white hover:bg-white/5 rounded-xl transition-all">파트너 명장 모집</a>
+          <div class="h-px bg-white/10 my-4"></div>
+          <a href="#partner" class="mob-link block text-center py-3.5 bg-brand-gold text-brand-black font-bold text-[15px] rounded-xl">아카데미 교육문의</a>
+          <a href="#contact" class="mob-link block text-center py-3.5 bg-white/10 text-white font-bold text-[15px] rounded-xl mt-2 border border-white/10">무료 견적신청</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 2. HERO ===== -->
+    <section id="hero" class="relative min-h-screen flex items-end pb-20 lg:pb-32">
+      <!-- 배경 이미지 -->
+      <div class="absolute inset-0">
+        <img
+          src="https://via.placeholder.com/1920x1080/1F2937/EAB308?text=%5BAI+이미지%5D+노란색+안전모와+유니폼의+산업안전기사+%7C+거친+철거+현장+배경"
+          alt="산업안전기사가 노란색 안전모와 유니폼을 착용하고 철거 현장을 관리하는 전문가 모습"
+          class="w-full h-full object-cover"
+        >
+        <div class="hero-gradient absolute inset-0"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full">
+        <div class="max-w-3xl">
+          <!-- 뱃지 -->
+          <div class="reveal inline-flex items-center gap-2.5 bg-white/[0.08] border border-white/[0.12] rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
+            <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
+            <span class="text-brand-gold text-[13px] font-semibold tracking-tight">국가공인 산업안전기사 운영</span>
+          </div>
+
+          <!-- 메인 카피 -->
+          <h1 class="reveal reveal-delay-1 text-[clamp(2rem,5vw,3.75rem)] font-extrabold tracking-tight leading-[1.15] text-white mb-7">
+            무작정 부수는 시대는 끝났습니다.<br>
+            <span class="text-brand-gold">지식이 비용을 줄이는</span><br>
+            철거의 명장.
+          </h1>
+
+          <!-- 서브 카피 -->
+          <p class="reveal reveal-delay-2 text-base sm:text-lg lg:text-xl font-light tracking-tight leading-relaxed text-white/60 mb-12 max-w-xl">
+            국가기술자격 <span class="text-white font-medium">산업안전기사</span>가 설계하는 정밀 공정.<br>
+            대한민국 <span class="text-brand-gold font-medium">최저가 철거</span>의 기준을 제시합니다.
+          </p>
+
+          <!-- CTA -->
+          <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
+            <a href="#contact"
+              class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-gold text-brand-black text-base font-bold tracking-tight rounded-2xl hover:bg-brand-gold-light hover:shadow-gold transition-all duration-300">
+              무료 견적신청
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+            <a href="#partner"
+              class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/[0.08] text-white text-base font-medium tracking-tight rounded-2xl border border-white/[0.12] hover:bg-white/[0.14] transition-all duration-300 backdrop-blur-sm">
+              아카데미 교육문의
+            </a>
+          </div>
+        </div>
+
+        <!-- 신뢰 지표 -->
+        <div class="reveal reveal-delay-4 flex flex-wrap gap-x-12 gap-y-6 mt-16 lg:mt-24 pt-8 border-t border-white/[0.08]">
+          <div>
+            <p class="stat-number text-3xl lg:text-4xl font-extrabold text-white">500<span class="text-brand-gold">+</span></p>
+            <p class="text-[13px] font-light text-white/40 mt-1 tracking-tight">누적 시공 건수</p>
+          </div>
+          <div>
+            <p class="stat-number text-3xl lg:text-4xl font-extrabold text-white">100<span class="text-brand-gold">%</span></p>
+            <p class="text-[13px] font-light text-white/40 mt-1 tracking-tight">무사고 안전 달성</p>
+          </div>
+          <div>
+            <p class="stat-number text-3xl lg:text-4xl font-extrabold text-white">4.9<span class="text-brand-gold">/5</span></p>
+            <p class="text-[13px] font-light text-white/40 mt-1 tracking-tight">고객 만족도</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. 차별화 섹션 ===== -->
+    <section id="brand-story" class="relative py-28 lg:py-40 bg-brand-surface overflow-hidden">
+      <!-- 장식 요소 -->
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-gold/[0.03] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <!-- 섹션 라벨 -->
+        <div class="reveal text-center mb-20">
+          <span class="inline-block text-[12px] font-bold tracking-[0.2em] uppercase text-brand-gold mb-5">Why 철거명장</span>
+          <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-extrabold tracking-tight leading-tight text-brand-black">
+            시중 업체의 <span class="relative inline-block">
+              80~90%
+              <span class="absolute -bottom-1 left-0 w-full h-2 bg-brand-gold/20 rounded"></span>
+            </span>는 무자격입니다
+          </h2>
+          <p class="text-base lg:text-lg font-light tracking-tight text-brand-muted mt-5 max-w-2xl mx-auto leading-relaxed">
+            철거명장은 국가가 공인한 <strong class="font-semibold text-brand-black">산업안전기사</strong>가 모든 공정을 직접 관리합니다.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <!-- 이미지 -->
+          <div class="reveal relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-soft-xl">
+              <img
+                src="https://via.placeholder.com/800x600/374151/F9FAFB?text=%5B실사+이미지%5D+산업안전기사+자격증+실물+%26+현장+도면+검토+전문가"
+                alt="산업안전기사 자격증 실물 사진 및 철거 현장에서 도면을 검토하는 전문가"
+                class="w-full aspect-[4/3] object-cover"
+              >
+            </div>
+            <!-- 플로팅 뱃지 -->
+            <div class="absolute -bottom-6 right-4 sm:right-8 bg-white rounded-2xl p-5 shadow-soft-lg border border-brand-surface-alt">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-brand-gold/10 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/></svg>
+                </div>
+                <div>
+                  <p class="text-[11px] font-medium text-brand-muted tracking-tight">국가기술자격</p>
+                  <p class="text-base font-extrabold text-brand-black tracking-tight">산업안전기사</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 비교 카드 -->
+          <div class="space-y-6">
+            <!-- 무자격 업체 -->
+            <div class="reveal bg-white rounded-3xl p-7 lg:p-8 border border-red-100 hover-lift shadow-soft">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                  <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </div>
+                <h3 class="text-base font-extrabold text-red-500 tracking-tight">무자격 업체</h3>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 text-[14px] font-light text-brand-muted tracking-tight leading-relaxed">
+                <span>주먹구구식 공정</span>
+                <svg class="w-4 h-4 text-brand-subtle shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                <span class="text-red-400 font-medium">사고 위험</span>
+                <svg class="w-4 h-4 text-brand-subtle shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                <span class="text-red-400 font-medium">추가 비용 발생</span>
+              </div>
+            </div>
+
+            <!-- 철거명장 -->
+            <div class="reveal reveal-delay-1 bg-white rounded-3xl p-7 lg:p-8 border-2 border-brand-gold/30 hover-lift shadow-soft relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/[0.04] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative">
+                <div class="flex items-center gap-3 mb-5">
+                  <div class="w-10 h-10 bg-brand-gold/10 rounded-xl flex items-center justify-center">
+                    <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <h3 class="text-base font-extrabold text-brand-black tracking-tight">철거명장</h3>
+                </div>
+                <div class="flex flex-wrap items-center gap-2 text-[14px] font-light text-brand-muted tracking-tight leading-relaxed">
+                  <span>법규 기반 공정 설계</span>
+                  <svg class="w-4 h-4 text-brand-subtle shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                  <span class="font-medium text-brand-black">안전 확보</span>
+                  <svg class="w-4 h-4 text-brand-subtle shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                  <span class="bg-brand-gold text-brand-black font-bold px-2.5 py-0.5 rounded-lg text-[13px]">'최저가' 실현</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 핵심 수치 -->
+            <div class="reveal reveal-delay-2 grid grid-cols-3 gap-4 pt-4">
+              <div class="bg-white rounded-2xl p-5 text-center shadow-soft border border-brand-surface-alt">
+                <p class="stat-number text-2xl font-extrabold text-brand-black">30%</p>
+                <p class="text-[11px] font-medium text-brand-muted mt-1 tracking-tight">평균 철거비용 절감</p>
+              </div>
+              <div class="bg-white rounded-2xl p-5 text-center shadow-soft border border-brand-surface-alt">
+                <p class="stat-number text-2xl font-extrabold text-brand-black">0건</p>
+                <p class="text-[11px] font-medium text-brand-muted mt-1 tracking-tight">안전사고 이력</p>
+              </div>
+              <div class="bg-white rounded-2xl p-5 text-center shadow-soft border border-brand-surface-alt">
+                <p class="stat-number text-2xl font-extrabold text-brand-black">A+</p>
+                <p class="text-[11px] font-medium text-brand-muted mt-1 tracking-tight">안전관리 등급</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. 4大 안심 서비스 ===== -->
+    <section id="services" class="py-28 lg:py-40 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="reveal text-center mb-20">
+          <span class="inline-block text-[12px] font-bold tracking-[0.2em] uppercase text-brand-gold mb-5">Services</span>
+          <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-extrabold tracking-tight leading-tight text-brand-black">
+            철거명장이 약속하는<br><span class="text-brand-gold">4가지 고객 혜택</span>
+          </h2>
+          <p class="text-base font-light tracking-tight text-brand-muted mt-5 max-w-xl mx-auto leading-relaxed">
+            철거비용 걱정부터 복잡한 행정까지, 모든 것을 책임집니다.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 카드 1 -->
+          <article class="reveal group bg-brand-surface rounded-3xl p-7 border border-brand-surface-alt hover-lift hover:shadow-soft-lg hover:border-brand-gold/20 transition-all duration-500">
+            <div class="w-12 h-12 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors duration-300">
+              <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-brand-black tracking-tight mb-3">최저가 보장제</h3>
+            <p class="text-[14px] font-light text-brand-muted leading-relaxed tracking-tight">공정 최적화로 만든 정직한 견적. 동일 조건 대비 최저가를 보장합니다.</p>
+            <img
+              src="https://via.placeholder.com/400x220/F3F4F6/6B7280?text=%5B실사+이미지%5D+견적서+샘플"
+              alt="철거비용 최저가 보장 견적서 샘플 이미지"
+              class="w-full rounded-2xl mt-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            >
+          </article>
+
+          <!-- 카드 2 (BEST) -->
+          <article id="subsidy" class="reveal reveal-delay-1 group bg-brand-surface rounded-3xl p-7 border-2 border-brand-gold/20 hover-lift hover:shadow-gold hover:border-brand-gold/40 transition-all duration-500 relative">
+            <div class="absolute top-5 right-5 bg-brand-gold text-brand-black text-[10px] font-extrabold tracking-wider uppercase px-3 py-1 rounded-full">Best</div>
+            <div class="w-12 h-12 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors duration-300">
+              <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-brand-black tracking-tight mb-3">폐업지원금 최대 1,000만 원</h3>
+            <p class="text-[14px] font-light text-brand-muted leading-relaxed tracking-tight">받을 수 있는 모든 폐업지원금 혜택을 찾아드립니다. 놓치는 지원금 없이.</p>
+            <img
+              src="https://via.placeholder.com/400x220/F3F4F6/6B7280?text=%5B실사+이미지%5D+폐업지원금+서류"
+              alt="폐업지원금 신청 안내 서류 및 자료"
+              class="w-full rounded-2xl mt-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            >
+          </article>
+
+          <!-- 카드 3 -->
+          <article class="reveal reveal-delay-2 group bg-brand-surface rounded-3xl p-7 border border-brand-surface-alt hover-lift hover:shadow-soft-lg hover:border-brand-gold/20 transition-all duration-500">
+            <div class="w-12 h-12 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors duration-300">
+              <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-brand-black tracking-tight mb-3">행정업무 무상대행</h3>
+            <p class="text-[14px] font-light text-brand-muted leading-relaxed tracking-tight">600만 원 상당의 복잡한 서류 작업을 완벽하게 무상 대행해 드립니다.</p>
+            <img
+              src="https://via.placeholder.com/400x220/F3F4F6/6B7280?text=%5B실사+이미지%5D+행정서류+샘플"
+              alt="상가철거 행정업무 대행 서류 샘플"
+              class="w-full rounded-2xl mt-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            >
+          </article>
+
+          <!-- 카드 4 -->
+          <article class="reveal reveal-delay-3 group bg-brand-surface rounded-3xl p-7 border border-brand-surface-alt hover-lift hover:shadow-soft-lg hover:border-brand-gold/20 transition-all duration-500">
+            <div class="w-12 h-12 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-gold/20 transition-colors duration-300">
+              <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"/></svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-brand-black tracking-tight mb-3">폐기물 처리 원스톱</h3>
+            <p class="text-[14px] font-light text-brand-muted leading-relaxed tracking-tight">신고부터 배출까지 뒷말 없는 깔끔한 마무리. 폐기물 처리까지 한 번에.</p>
+            <img
+              src="https://via.placeholder.com/400x220/F3F4F6/6B7280?text=%5B실사+이미지%5D+폐기물+처리+현장"
+              alt="철거 현장 폐기물 처리 및 깔끔한 마무리 모습"
+              class="w-full rounded-2xl mt-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. 파트너 모집 (B2B) ===== -->
+    <section id="partner" class="relative py-28 lg:py-40 bg-brand-dark overflow-hidden">
+      <!-- 글로우 장식 -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/[0.03] rounded-full blur-3xl"></div>
+
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <!-- 텍스트 -->
+          <div>
+            <span class="reveal inline-block text-[12px] font-bold tracking-[0.2em] uppercase text-brand-gold mb-6">Partner</span>
+            <h2 class="reveal reveal-delay-1 text-[clamp(1.5rem,3.5vw,2.75rem)] font-extrabold tracking-tight leading-[1.2] text-white mb-7">
+              단순 노무자가 아닌,<br>
+              지역을 대표하는<br>
+              <span class="text-brand-gold">'파트너 명장'</span>이<br>되어주세요.
+            </h2>
+            <p class="reveal reveal-delay-2 text-lg lg:text-xl font-light tracking-tight text-brand-gold/80 mb-12 leading-relaxed">
+              창업비용 <span class="font-bold text-brand-gold">300만 원</span>으로 시작하는<br>
+              대한민국 최고의 철거 브랜드 파트너십
+            </p>
+
+            <!-- 혜택 -->
+            <div class="space-y-5 mb-12">
+              <div class="reveal reveal-delay-2 flex items-start gap-4 group">
+                <div class="w-9 h-9 bg-brand-gold/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-gold/20 transition-colors">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-white font-bold tracking-tight text-[15px]">철거 아카데미 실무 전수</p>
+                  <p class="text-white/40 text-[13px] font-light mt-1 tracking-tight">산업안전기사 출신 전문가의 체계적인 교육 과정</p>
+                </div>
+              </div>
+              <div class="reveal reveal-delay-3 flex items-start gap-4 group">
+                <div class="w-9 h-9 bg-brand-gold/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-gold/20 transition-colors">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-white font-bold tracking-tight text-[15px]">본사 직영 오더 배정</p>
+                  <p class="text-white/40 text-[13px] font-light mt-1 tracking-tight">별도 영업 없이 본사에서 직접 시공 건 배정</p>
+                </div>
+              </div>
+              <div class="reveal reveal-delay-4 flex items-start gap-4 group">
+                <div class="w-9 h-9 bg-brand-gold/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-gold/20 transition-colors">
+                  <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-white font-bold tracking-tight text-[15px]">전문가 브랜딩 지원</p>
+                  <p class="text-white/40 text-[13px] font-light mt-1 tracking-tight">유니폼, 차량 래핑, 명함 등 철거창업 브랜딩 패키지</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="tel:0000000000"
+              class="reveal inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-gold text-brand-black text-base font-bold tracking-tight rounded-2xl hover:bg-brand-gold-light hover:shadow-gold transition-all duration-300 group">
+              아카데미 교육문의
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+
+          <!-- 이미지 -->
+          <div class="reveal relative">
+            <div class="rounded-3xl overflow-hidden gold-glow">
+              <img
+                src="https://via.placeholder.com/800x700/374151/EAB308?text=%5BAI+이미지%5D+철거명장+트럭+앞+자신감+있는+젊은+남녀+파트너들"
+                alt="철거창업 파트너 명장들이 철거명장 로고 트럭 앞에서 자신감 있게 포즈를 취하는 모습"
+                class="w-full aspect-[4/3.5] object-cover"
+              >
+            </div>
+            <!-- 플로팅 카드 -->
+            <div class="absolute -bottom-5 left-4 sm:left-8 bg-white rounded-2xl p-6 shadow-soft-xl">
+              <p class="stat-number text-3xl font-extrabold text-brand-black tracking-tight">300<span class="text-base font-bold text-brand-muted">만 원</span></p>
+              <p class="text-[12px] font-medium text-brand-muted mt-1 tracking-tight">으로 시작하는 철거창업</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. 시공 사례 (포트폴리오) ===== -->
+    <section id="portfolio" class="py-28 lg:py-40 bg-brand-surface">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+          <div>
+            <span class="inline-block text-[12px] font-bold tracking-[0.2em] uppercase text-brand-gold mb-5">Portfolio</span>
+            <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-extrabold tracking-tight leading-tight text-brand-black">
+              실제 시공 사례
+            </h2>
+            <p class="text-base font-light tracking-tight text-brand-muted mt-3">Before & After로 확인하는 완벽한 시공</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="slider-prev" class="w-11 h-11 border border-brand-surface-alt bg-white rounded-xl flex items-center justify-center hover:border-brand-gold/30 hover:bg-brand-gold/5 transition-all duration-300" aria-label="이전 사례">
+              <svg class="w-4 h-4 text-brand-slate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="slider-next" class="w-11 h-11 border border-brand-surface-alt bg-white rounded-xl flex items-center justify-center hover:border-brand-gold/30 hover:bg-brand-gold/5 transition-all duration-300" aria-label="다음 사례">
+              <svg class="w-4 h-4 text-brand-slate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="slider-track" class="slider-track pb-4">
+          <!-- 사례 1 -->
+          <article class="slider-card w-[340px] sm:w-[420px] bg-white rounded-3xl overflow-hidden shadow-soft hover-lift border border-brand-surface-alt">
+            <div class="grid grid-cols-2">
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/374151/FFFFFF?text=Before" alt="강남구 상가철거 시공 전 모습" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-black/70 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg backdrop-blur-sm">Before</span>
+              </div>
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/F9FAFB/111827?text=After" alt="강남구 상가철거 완료 후 깨끗한 빈 공간" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-gold text-brand-black text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg">After</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-brand-black tracking-tight">강남구 상가 인테리어 철거</h3>
+              <p class="text-[13px] font-light text-brand-muted mt-1.5 tracking-tight">45평 &middot; 3일 완료 &middot; 폐기물 처리 포함</p>
+            </div>
+          </article>
+
+          <!-- 사례 2 -->
+          <article class="slider-card w-[340px] sm:w-[420px] bg-white rounded-3xl overflow-hidden shadow-soft hover-lift border border-brand-surface-alt">
+            <div class="grid grid-cols-2">
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/374151/FFFFFF?text=Before" alt="마포구 사무실 철거 시공 전 모습" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-black/70 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg backdrop-blur-sm">Before</span>
+              </div>
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/F9FAFB/111827?text=After" alt="마포구 사무실 철거 완료 후 깨끗한 공간" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-gold text-brand-black text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg">After</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-brand-black tracking-tight">마포구 사무실 원상복구 철거</h3>
+              <p class="text-[13px] font-light text-brand-muted mt-1.5 tracking-tight">80평 &middot; 5일 완료 &middot; 행정대행 포함</p>
+            </div>
+          </article>
+
+          <!-- 사례 3 -->
+          <article class="slider-card w-[340px] sm:w-[420px] bg-white rounded-3xl overflow-hidden shadow-soft hover-lift border border-brand-surface-alt">
+            <div class="grid grid-cols-2">
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/374151/FFFFFF?text=Before" alt="서초구 음식점 폐업 철거 전 모습" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-black/70 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg backdrop-blur-sm">Before</span>
+              </div>
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/F9FAFB/111827?text=After" alt="서초구 음식점 철거 완료 후 깨끗한 빈 공간" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-gold text-brand-black text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg">After</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-brand-black tracking-tight">서초구 음식점 폐업 철거</h3>
+              <p class="text-[13px] font-light text-brand-muted mt-1.5 tracking-tight">30평 &middot; 2일 완료 &middot; 폐업지원금 안내</p>
+            </div>
+          </article>
+
+          <!-- 사례 4 -->
+          <article class="slider-card w-[340px] sm:w-[420px] bg-white rounded-3xl overflow-hidden shadow-soft hover-lift border border-brand-surface-alt">
+            <div class="grid grid-cols-2">
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/374151/FFFFFF?text=Before" alt="송파구 카페 인테리어 철거 전 모습" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-black/70 text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg backdrop-blur-sm">Before</span>
+              </div>
+              <div class="relative">
+                <img src="https://via.placeholder.com/420x320/F9FAFB/111827?text=After" alt="송파구 카페 철거 완료 후 깨끗한 빈 공간" class="w-full h-52 object-cover">
+                <span class="absolute top-3 left-3 bg-brand-gold text-brand-black text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg">After</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-brand-black tracking-tight">송파구 카페 인테리어 철거</h3>
+              <p class="text-[13px] font-light text-brand-muted mt-1.5 tracking-tight">25평 &middot; 2일 완료 &middot; 폐기물 처리 포함</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 견적 문의 섹션 ===== -->
+    <section id="contact" class="py-28 lg:py-40 bg-white">
+      <div class="max-w-2xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="reveal text-center mb-16">
+          <span class="inline-block text-[12px] font-bold tracking-[0.2em] uppercase text-brand-gold mb-5">Contact</span>
+          <h2 class="text-[clamp(1.5rem,3.5vw,2.75rem)] font-extrabold tracking-tight leading-tight text-brand-black">
+            지금 바로<br><span class="text-brand-gold">무료 견적</span>을 받아보세요
+          </h2>
+          <p class="text-base font-light tracking-tight text-brand-muted mt-5">전화 한 통이면 산업안전기사가 직접 현장을 방문합니다.</p>
+        </div>
+
+        <div class="reveal bg-brand-surface rounded-3xl p-8 sm:p-10 lg:p-12 shadow-soft border border-brand-surface-alt">
+          <form id="estimate-form" class="space-y-5" onsubmit="return false;">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">이름 <span class="text-brand-gold">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="홍길동"
+                  class="w-full px-4 py-3.5 bg-white border border-brand-surface-alt rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 transition-all duration-300 text-[14px] tracking-tight placeholder:text-brand-subtle/50">
+              </div>
+              <div>
+                <label for="phone" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">연락처 <span class="text-brand-gold">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000"
+                  class="w-full px-4 py-3.5 bg-white border border-brand-surface-alt rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 transition-all duration-300 text-[14px] tracking-tight placeholder:text-brand-subtle/50">
+              </div>
+            </div>
+            <div>
+              <label for="location" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">현장 위치</label>
+              <input type="text" id="location" name="location" placeholder="예: 서울시 강남구 역삼동"
+                class="w-full px-4 py-3.5 bg-white border border-brand-surface-alt rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 transition-all duration-300 text-[14px] tracking-tight placeholder:text-brand-subtle/50">
+            </div>
+            <div>
+              <label for="type" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">평수 / 철거 유형</label>
+              <input type="text" id="type" name="type" placeholder="예: 30평 / 상가 인테리어 철거"
+                class="w-full px-4 py-3.5 bg-white border border-brand-surface-alt rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 transition-all duration-300 text-[14px] tracking-tight placeholder:text-brand-subtle/50">
+            </div>
+            <div>
+              <label for="message" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">요청사항</label>
+              <textarea id="message" name="message" rows="4" placeholder="추가 요청사항을 입력해 주세요."
+                class="w-full px-4 py-3.5 bg-white border border-brand-surface-alt rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/50 transition-all duration-300 text-[14px] tracking-tight resize-none placeholder:text-brand-subtle/50"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full py-4 bg-brand-gold text-brand-black text-base font-bold tracking-tight rounded-2xl hover:bg-brand-gold-light hover:shadow-gold transition-all duration-300 group">
+              무료 견적 신청하기
+              <svg class="inline w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </button>
+            <p class="text-[11px] text-center text-brand-subtle tracking-tight">상담 신청 시 개인정보 수집 및 이용에 동의하는 것으로 간주됩니다.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 7. 플로팅 바 ===== -->
+  <div id="floating-bar" class="fixed bottom-0 left-0 w-full z-40 floating-bar-hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    <div class="bg-white/80 backdrop-blur-xl border-t border-black/[0.06] shadow-[0_-8px_30px_rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex gap-3">
+        <a href="#partner"
+          class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-brand-gold text-brand-black font-bold text-[14px] tracking-tight rounded-xl hover:bg-brand-gold-light transition-all duration-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342"/></svg>
+          아카데미 교육문의
+        </a>
+        <a href="#contact"
+          class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-brand-black text-white font-bold text-[14px] tracking-tight rounded-xl hover:bg-brand-charcoal transition-all duration-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          무료 견적신청
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 8. 푸터 ===== -->
+  <footer class="bg-brand-black pt-20 pb-28 lg:pb-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- 회사 소개 -->
+        <div class="sm:col-span-2">
+          <a href="#" class="inline-flex items-center gap-2.5 mb-5">
+            <div class="w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center">
+              <svg class="w-4.5 h-4.5" fill="#111827" viewBox="0 0 24 24"><path d="M21 16.811c0 .682-.23 1.178-.687 1.488-.458.31-1.074.333-1.849.07l-5.175-1.763A6 6 0 0 1 9 10.832V5.169a6 6 0 0 1 4.289-5.774l5.175-1.763c.775-.263 1.39-.24 1.849.07.456.31.687.806.687 1.488v17.621ZM7 10.832a8 8 0 0 0 4.646 7.268L5.19 20.363c-.77.262-1.383.24-1.841-.07C2.89 19.983 2.66 19.487 2.66 18.805V1.195c0-.682.23-1.178.688-1.489.458-.31 1.072-.332 1.841-.069l3.81 1.298V10.832Z"/></svg>
+            </div>
+            <span class="text-base font-extrabold text-white tracking-tight">철거<span class="text-brand-gold">명장</span></span>
+          </a>
+          <p class="text-[14px] font-light text-white/30 leading-relaxed tracking-tight max-w-md">
+            국가공인 산업안전기사가 설계하는 대한민국 최저가 철거 전문업체. 상가철거, 인테리어철거, 원상복구부터 폐업지원금 안내, 폐기물 처리까지 원스톱 서비스를 제공합니다.
+          </p>
+        </div>
+
+        <!-- 서비스 -->
+        <div>
+          <h3 class="text-[13px] font-bold text-white/60 tracking-tight mb-5">서비스</h3>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-[14px] font-light text-white/30 hover:text-brand-gold transition-colors duration-300 tracking-tight">상가 철거</a></li>
+            <li><a href="#services" class="text-[14px] font-light text-white/30 hover:text-brand-gold transition-colors duration-300 tracking-tight">인테리어 철거</a></li>
+            <li><a href="#services" class="text-[14px] font-light text-white/30 hover:text-brand-gold transition-colors duration-300 tracking-tight">원상복구 철거</a></li>
+            <li><a href="#subsidy" class="text-[14px] font-light text-white/30 hover:text-brand-gold transition-colors duration-300 tracking-tight">폐업지원금 안내</a></li>
+            <li><a href="#services" class="text-[14px] font-light text-white/30 hover:text-brand-gold transition-colors duration-300 tracking-tight">폐기물 처리</a></li>
+          </ul>
+        </div>
+
+        <!-- 고객센터 -->
+        <div>
+          <h3 class="text-[13px] font-bold text-white/60 tracking-tight mb-5">고객센터</h3>
+          <p class="stat-number text-2xl font-extrabold text-brand-gold tracking-tight mb-3">000-0000-0000</p>
+          <div class="text-[13px] font-light text-white/30 space-y-1 tracking-tight">
+            <p>평일 09:00 - 18:00</p>
+            <p>토요일 09:00 - 13:00</p>
+            <p>일요일 / 공휴일 휴무</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px bg-white/[0.06] mb-8"></div>
+
+      <!-- 사업자 정보 -->
+      <div class="text-[12px] font-light text-white/20 leading-relaxed tracking-tight space-y-1">
+        <p>상호명: 철거명장 &nbsp;|&nbsp; 대표자: [성함] &nbsp;|&nbsp; 사업자등록번호: [000-00-00000]</p>
+        <p>주소: [서울특별시 OO구 OO로 OO, O층] &nbsp;|&nbsp; 고객센터: [000-0000-0000]</p>
+        <p class="mt-4 text-white/15">&copy; 2024 철거명장. All rights reserved.</p>
+      </div>
+
+      <!-- SEO 키워드 -->
+      <p class="text-[11px] font-light text-white/[0.08] mt-8 tracking-tight">
+        철거비용 | 상가철거 | 인테리어철거 | 폐업지원금 | 철거창업 | 산업안전기사 | 철거업체 | 폐기물처리 | 원상복구 | 철거견적 | 철거명장 아카데미 | 파트너 명장
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // === 스크롤 애니메이션 (Intersection Observer) ===
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // === 헤더 스크롤 ===
+    const header = document.getElementById('header');
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroHeight = document.getElementById('hero').offsetHeight;
+
+      if (scrollY > 50) {
+        if (scrollY < heroHeight) {
+          header.classList.add('header-scrolled');
+          header.classList.remove('header-scrolled-light');
+        } else {
+          header.classList.remove('header-scrolled');
+          header.classList.add('header-scrolled-light');
+          header.querySelectorAll('nav a:not(.mob-link)').forEach(a => a.classList.add('!text-brand-slate'));
+          header.querySelector('a[href="#"] span').classList.add('!text-brand-black');
+          header.querySelector('a[href="#"] span span').classList.add('!text-brand-gold');
+        }
+      } else {
+        header.classList.remove('header-scrolled', 'header-scrolled-light');
+        header.querySelectorAll('nav a:not(.mob-link)').forEach(a => a.classList.remove('!text-brand-slate'));
+        header.querySelector('a[href="#"] span').classList.remove('!text-brand-black');
+      }
+      lastScrollY = scrollY;
+    });
+
+    // === 모바일 메뉴 ===
+    const mobNav = document.getElementById('mob-nav');
+    const mobOverlay = document.getElementById('mob-overlay');
+
+    function toggleMobile(open) {
+      mobNav.classList.toggle('open', open);
+      mobOverlay.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    document.getElementById('menu-open').addEventListener('click', () => toggleMobile(true));
+    document.getElementById('menu-close').addEventListener('click', () => toggleMobile(false));
+    mobOverlay.addEventListener('click', () => toggleMobile(false));
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => toggleMobile(false)));
+
+    // === 포트폴리오 슬라이더 ===
+    const sliderTrack = document.getElementById('slider-track');
+    const scrollAmt = 440;
+
+    document.getElementById('slider-prev').addEventListener('click', () => {
+      sliderTrack.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+    });
+    document.getElementById('slider-next').addEventListener('click', () => {
+      sliderTrack.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+    });
+
+    // === 플로팅 바 ===
+    const floatingBar = document.getElementById('floating-bar');
+    const heroSection = document.getElementById('hero');
+
+    function updateFloatingBar() {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        floatingBar.classList.remove('floating-bar-hidden');
+        floatingBar.classList.add('floating-bar-visible');
+      } else {
+        floatingBar.classList.add('floating-bar-hidden');
+        floatingBar.classList.remove('floating-bar-visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateFloatingBar, { passive: true });
+    updateFloatingBar();
+
+    // === 견적 폼 ===
+    document.getElementById('estimate-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('견적 신청이 접수되었습니다.\n담당자가 빠르게 연락드리겠습니다.');
+      this.reset();
+    });
+
+    // === 부드러운 앵커 스크롤 ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          const offset = header.offsetHeight + 20;
+          const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: pos, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+  <!-- 구조화된 데이터 (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "철거명장",
+    "description": "국가공인 산업안전기사가 설계하는 대한민국 최저가 철거 전문업체. 상가철거, 인테리어철거, 폐업지원금 안내까지.",
+    "telephone": "000-0000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "서울특별시",
+      "addressCountry": "KR"
+    },
+    "priceRange": "$$",
+    "openingHours": ["Mo-Fr 09:00-18:00", "Sa 09:00-13:00"]
+  }
+  </script>
+</body>
+</html>
