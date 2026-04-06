@@ -187,10 +187,10 @@
 
         <!-- 데스크탑 네비게이션 -->
         <nav class="hidden lg:flex items-center gap-10" aria-label="메인 내비게이션">
-          <a href="#brand-story" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">브랜드 스토리</a>
-          <a href="#services" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">서비스 안내</a>
-          <a href="#subsidy" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">폐업지원금</a>
-          <a href="#partner" class="text-[13px] font-medium tracking-tight text-brand-subtle hover:text-white transition-colors duration-300">파트너 명장 모집</a>
+          <a href="#brand-story" class="text-[14px] font-semibold tracking-tight text-white/90 hover:text-white drop-shadow-md transition-colors duration-300">브랜드 스토리</a>
+          <a href="#services" class="text-[14px] font-semibold tracking-tight text-white/90 hover:text-white drop-shadow-md transition-colors duration-300">서비스 안내</a>
+          <a href="#subsidy" class="text-[14px] font-semibold tracking-tight text-white/90 hover:text-white drop-shadow-md transition-colors duration-300">폐업지원금</a>
+          <a href="#partner" class="text-[14px] font-semibold tracking-tight text-white/90 hover:text-white drop-shadow-md transition-colors duration-300">파트너 명장 모집</a>
         </nav>
 
         <!-- 데스크탑 CTA -->
@@ -199,7 +199,7 @@
             class="px-5 py-2.5 bg-brand-gold text-brand-black text-[13px] font-bold tracking-tight rounded-xl hover:bg-brand-gold-light transition-all duration-300 hover:shadow-gold">
             아카데미 교육문의
           </a>
-          <a href="#contact"
+          <a href="#contact" id="nav-quote-btn"
             class="px-5 py-2.5 bg-white/10 text-white text-[13px] font-bold tracking-tight rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300">
             무료 견적신청
           </a>
@@ -235,20 +235,20 @@
 
   <main>
     <!-- ===== 2. HERO ===== -->
-    <section id="hero" class="relative min-h-screen flex items-end pt-28 pb-20 lg:pt-32 lg:pb-32">
-      <div class="absolute inset-0">
+    <section id="hero" class="relative min-h-screen flex items-center pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
         <img
-          src="https://via.placeholder.com/1920x1080/1F2937/EAB308?text=%5BAI+이미지%5D+노란색+안전모와+유니폼의+산업안전기사+%7C+거친+철거+현장+배경"
-          alt="산업안전기사가 노란색 안전모와 유니폼을 착용하고 철거 현장을 관리하는 전문가 모습"
-          class="w-full h-full object-cover"
+          src="./images/master-demolition-site.jpg"
+          alt="산업안전기사가 노란색 안전모를 착용하고 철거 현장을 관리하는 전문가 모습"
+          class="w-full h-full object-cover object-right"
         >
-        <div class="hero-gradient absolute inset-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/20"></div>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full">
         <div class="max-w-4xl mx-auto text-center">
           
-          <div class="reveal inline-flex items-center gap-2.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
+          <div class="reveal inline-flex items-center justify-center gap-2.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
             <span class="text-brand-gold text-[14px] font-bold tracking-tight">💡 최대 1,000만 원 지원금으로 '철거비용 0원' 도전</span>
           </div>
 
@@ -319,11 +319,11 @@
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <!-- 이미지 -->
           <div class="reveal relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-soft-xl">
+            <div class="relative rounded-3xl overflow-hidden shadow-soft-xl aspect-[4/3] bg-brand-surface-alt">
               <img
-                src="https://via.placeholder.com/800x600/374151/F9FAFB?text=%5B실사+이미지%5D+산업안전기사+자격증+실물+%26+현장+도면+검토+전문가"
-                alt="산업안전기사 자격증 실물 사진 및 철거 현장에서 도면을 검토하는 전문가"
-                class="w-full aspect-[4/3] object-cover"
+                src="./images/industrial-safety-certificate.jpg"
+                alt="국가기술자격 산업안전기사 자격증 실물 사진 (소지자: 황영선)"
+                class="w-full h-full object-contain rounded-3xl"
               >
             </div>
             <!-- 플로팅 뱃지 -->
@@ -787,8 +787,8 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // === 헤더 스크롤 ===
     const header = document.getElementById('header');
+    const quoteBtn = document.getElementById('nav-quote-btn'); // 💡 추가됨: 견적 버튼 가져오기
     let lastScrollY = 0;
 
     window.addEventListener('scroll', () => {
@@ -797,19 +797,27 @@
 
       if (scrollY > 50) {
         if (scrollY < heroHeight) {
+          // 1. 어두운 배경 영역일 때 (히어로 섹션)
           header.classList.add('header-scrolled');
           header.classList.remove('header-scrolled-light');
+          header.querySelectorAll('nav a:not(.mob-link)').forEach(a => a.classList.remove('!text-brand-slate'));
+          header.querySelector('a[href="#"] span').classList.remove('!text-brand-black');
+          if(quoteBtn) quoteBtn.classList.remove('!bg-brand-black', '!text-white', '!border-transparent'); // 버튼 원상복구
         } else {
+          // 2. 밝은 배경 영역으로 넘어왔을 때
           header.classList.remove('header-scrolled');
           header.classList.add('header-scrolled-light');
           header.querySelectorAll('nav a:not(.mob-link)').forEach(a => a.classList.add('!text-brand-slate'));
           header.querySelector('a[href="#"] span').classList.add('!text-brand-black');
           header.querySelector('a[href="#"] span span').classList.add('!text-brand-gold');
+          if(quoteBtn) quoteBtn.classList.add('!bg-brand-black', '!text-white', '!border-transparent'); // 💡 추가됨: 버튼을 검정색으로 변경!
         }
       } else {
+        // 3. 맨 위로 올라왔을 때
         header.classList.remove('header-scrolled', 'header-scrolled-light');
         header.querySelectorAll('nav a:not(.mob-link)').forEach(a => a.classList.remove('!text-brand-slate'));
         header.querySelector('a[href="#"] span').classList.remove('!text-brand-black');
+        if(quoteBtn) quoteBtn.classList.remove('!bg-brand-black', '!text-white', '!border-transparent'); // 버튼 원상복구
       }
       lastScrollY = scrollY;
     });
