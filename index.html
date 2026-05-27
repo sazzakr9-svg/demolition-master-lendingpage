@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ3VFJ36HS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LZ3VFJ36HS');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>철거명장 | 산업안전기사가 설계하는 대한민국 최저가 철거 전문업체</title>
@@ -68,7 +77,10 @@
 
     /* 플로팅 바 하단 여백 */
     body { padding-bottom: 80px; }
-    @media (min-width: 1024px) { padding-bottom: 72px; }
+    @media (min-width: 1024px) {
+     .some-selector {
+    padding-bottom: 72px; }
+    }
 
     /* 헤더 */
     .header-blur {
