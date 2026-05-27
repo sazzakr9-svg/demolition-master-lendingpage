@@ -1117,15 +1117,17 @@
     window.addEventListener('scroll', updateFloatingBar, { passive: true });
     updateFloatingBar();
 
-    // === 견적 폼 → Google Sheets + 이메일 ===
-    document.getElementById('estimate-form').addEventListener('submit', async function(e) {
+    // === 견적 폼 → Google Sheets + 이메일 (hidden iframe 방식) ===
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmeamHgmJA6_VzbdwC3DdgcbnwfGs0KIQjzLFgJL-55y1gGNz-GAf2Am8qWKsEHvrcew/exec';
+
+    document.getElementById('estimate-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '접수 중...';
 
-      const payload = {
+      const fields = {
         name: this.name.value,
         phone: this.phone.value,
         location: this.location.value,
@@ -1135,22 +1137,41 @@
         message: this.message.value
       };
 
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbxfeTGfYIzAFlBhFegfzTTkIeI4gKRw_NiJau64D-ZJBfKYSz0peF5lGQ-ete3hhLHDPA/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify(payload)
-        });
+      // hidden iframe + temp form → CORS 우회
+      let iframe = document.getElementById('hidden_iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.id = 'hidden_iframe';
+        iframe.name = 'hidden_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      const tempForm = document.createElement('form');
+      tempForm.method = 'POST';
+      tempForm.action = APPS_SCRIPT_URL;
+      tempForm.target = 'hidden_iframe';
+      tempForm.style.display = 'none';
+
+      for (const [key, value] of Object.entries(fields)) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        tempForm.appendChild(input);
+      }
+
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+      document.body.removeChild(tempForm);
+
+      const form = this;
+      setTimeout(function() {
         alert('견적 신청이 접수되었습니다.\n담당자가 빠르게 연락드리겠습니다.');
-        this.reset();
-      } catch (err) {
-        alert('전송 중 오류가 발생했습니다.\n전화(1661-1422)로 문의해 주세요.');
-        console.error(err);
-      } finally {
+        form.reset();
         btn.disabled = false;
         btn.innerHTML = originalText;
-      }
+      }, 1500);
     });
 
     // === 부드러운 앵커 스크롤 ===
