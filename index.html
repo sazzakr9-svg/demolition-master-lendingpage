@@ -294,10 +294,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- 로고 -->
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 bg-brand-gold rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-            <svg class="w-5 h-5" fill="#111827" viewBox="0 0 24 24"><path d="M21 16.811c0 .682-.23 1.178-.687 1.488-.458.31-1.074.333-1.849.07l-5.175-1.763A6 6 0 0 1 9 10.832V5.169a6 6 0 0 1 4.289-5.774l5.175-1.763c.775-.263 1.39-.24 1.849.07.456.31.687.806.687 1.488v17.621ZM7 10.832a8 8 0 0 0 4.646 7.268L5.19 20.363c-.77.262-1.383.24-1.841-.07C2.89 19.983 2.66 19.487 2.66 18.805V1.195c0-.682.23-1.178.688-1.489.458-.31 1.072-.332 1.841-.069l3.81 1.298V10.832Z"/></svg>
-          </div>
+        <a href="#" class="flex items-center group">
           <span class="text-lg font-extrabold tracking-tight text-white">철거<span class="text-brand-gold">명장</span></span>
         </a>
 
@@ -900,7 +897,7 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
           무료 견적신청
         </a>
-        <a href="tel:0000000000"
+        <a href="tel:16611422"
           class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-brand-black text-white font-bold text-[14px] tracking-tight rounded-xl hover:bg-brand-charcoal transition-all duration-300">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
           전화 상담</a>
@@ -914,10 +911,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <!-- 회사 소개 -->
         <div class="sm:col-span-2">
-          <a href="#" class="inline-flex items-center gap-2.5 mb-5">
-            <div class="w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center">
-              <svg class="w-4.5 h-4.5" fill="#111827" viewBox="0 0 24 24"><path d="M21 16.811c0 .682-.23 1.178-.687 1.488-.458.31-1.074.333-1.849.07l-5.175-1.763A6 6 0 0 1 9 10.832V5.169a6 6 0 0 1 4.289-5.774l5.175-1.763c.775-.263 1.39-.24 1.849.07.456.31.687.806.687 1.488v17.621ZM7 10.832a8 8 0 0 0 4.646 7.268L5.19 20.363c-.77.262-1.383.24-1.841-.07C2.89 19.983 2.66 19.487 2.66 18.805V1.195c0-.682.23-1.178.688-1.489.458-.31 1.072-.332 1.841-.069l3.81 1.298V10.832Z"/></svg>
-            </div>
+          <a href="#" class="inline-flex items-center mb-5">
             <span class="text-base font-extrabold text-white tracking-tight">철거<span class="text-brand-gold">명장</span></span>
           </a>
           <p class="text-[14px] font-light text-white/30 leading-relaxed tracking-tight max-w-md">
@@ -1123,11 +1117,40 @@
     window.addEventListener('scroll', updateFloatingBar, { passive: true });
     updateFloatingBar();
 
-    // === 견적 폼 ===
-    document.getElementById('estimate-form').addEventListener('submit', function(e) {
+    // === 견적 폼 → Google Sheets + 이메일 ===
+    document.getElementById('estimate-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      alert('견적 신청이 접수되었습니다.\n담당자가 빠르게 연락드리겠습니다.');
-      this.reset();
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '접수 중...';
+
+      const payload = {
+        name: this.name.value,
+        phone: this.phone.value,
+        location: this.location.value,
+        type: this.type.value,
+        preferredDate: this['preferred-date'].value,
+        businessType: this['business-type'].value,
+        message: this.message.value
+      };
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbxfeTGfYIzAFlBhFegfzTTkIeI4gKRw_NiJau64D-ZJBfKYSz0peF5lGQ-ete3hhLHDPA/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        alert('견적 신청이 접수되었습니다.\n담당자가 빠르게 연락드리겠습니다.');
+        this.reset();
+      } catch (err) {
+        alert('전송 중 오류가 발생했습니다.\n전화(1661-1422)로 문의해 주세요.');
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
     });
 
     // === 부드러운 앵커 스크롤 ===
