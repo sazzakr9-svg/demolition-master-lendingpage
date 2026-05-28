@@ -836,7 +836,7 @@
         </div>
 
         <div class="reveal bg-brand-surface rounded-3xl p-8 sm:p-10 lg:p-12 shadow-soft border border-brand-surface-alt">
-          <form id="estimate-form" class="space-y-5 text-brand-black" onsubmit="return false;">
+          <form id="estimate-form" class="space-y-5 text-brand-black">
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label for="name" class="block text-[13px] font-semibold text-brand-black mb-2 tracking-tight">이름 <span class="text-brand-gold">*</span></label>
@@ -1117,17 +1117,17 @@
     window.addEventListener('scroll', updateFloatingBar, { passive: true });
     updateFloatingBar();
 
-    // === 견적 폼 → Google Sheets + 이메일 (hidden iframe 방식) ===
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmeamHgmJA6_VzbdwC3DdgcbnwfGs0KIQjzLFgJL-55y1gGNz-GAf2Am8qWKsEHvrcew/exec';
+    // === 견적 폼 → Make Webhook (Sheets + 이메일) ===
+    const WEBHOOK_URL = 'https://hook.us2.make.com/j937fjrresbfphpyvkebdj442ls8m7ti';
 
-    document.getElementById('estimate-form').addEventListener('submit', function(e) {
+    document.getElementById('estimate-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '접수 중...';
 
-      const fields = {
+      const payload = {
         name: this.name.value,
         phone: this.phone.value,
         location: this.location.value,
@@ -1137,41 +1137,22 @@
         message: this.message.value
       };
 
-      // hidden iframe + temp form → CORS 우회
-      let iframe = document.getElementById('hidden_iframe');
-      if (!iframe) {
-        iframe = document.createElement('iframe');
-        iframe.id = 'hidden_iframe';
-        iframe.name = 'hidden_iframe';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-      }
-
-      const tempForm = document.createElement('form');
-      tempForm.method = 'POST';
-      tempForm.action = APPS_SCRIPT_URL;
-      tempForm.target = 'hidden_iframe';
-      tempForm.style.display = 'none';
-
-      for (const [key, value] of Object.entries(fields)) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value;
-        tempForm.appendChild(input);
-      }
-
-      document.body.appendChild(tempForm);
-      tempForm.submit();
-      document.body.removeChild(tempForm);
-
-      const form = this;
-      setTimeout(function() {
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
         alert('견적 신청이 접수되었습니다.\n담당자가 빠르게 연락드리겠습니다.');
-        form.reset();
+        this.reset();
+      } catch (err) {
+        alert('전송 중 오류가 발생했습니다.\n전화(1661-1422)로 문의해 주세요.');
+        console.error(err);
+      } finally {
         btn.disabled = false;
         btn.innerHTML = originalText;
-      }, 1500);
+      }
     });
 
     // === 부드러운 앵커 스크롤 ===
