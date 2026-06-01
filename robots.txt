@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://demolitionmaster.co.kr/sitemap.xml
